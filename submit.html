@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Terdaftar</title>
+</head>
+<body>
+  <script>
+    // Mengambil nilai nama restoran dari URL
+    var urlParams = new URLSearchParams(window.location.search);
+    var namaRestoran = urlParams.get('namaRestoran');
+
+    // Menampilkan pesan
+    document.write('<h2>Selamat ' + ' Restoran ' + namaRestoran + ' sudah terdaftar!</h2>');
+  </script>
+</body>
+</html>

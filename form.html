@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Registrasi</title>
+  <style>
+    .form-group {
+      margin-bottom: 10px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+  </style>
+  <script>
+    function submitForm() {
+      var nameInput = document.getElementById('name');
+      var restoranNama = nameInput.value;
+      
+      // Mengarahkan ke halaman baru dengan pesan
+      window.location.href = "submit.html?namaRestoran=" + encodeURIComponent(restoranNama);
+    }
+  </script>
+</head>
+<body>
+  <h2>Form Registrasi Makanan</h2>
+  <form>
+    <div class="form-group">
+      <label for="name">Nama Restoran:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="alamat">Alamat:</label>
+      <input type="text" id="alamat" name="alamat" required>
+    </div>
+    
+    <div class="form-group">
+      <label>Makanan Favorit:</label><br>
+      <input type="checkbox" id="food1" name="food[]" value="Nusantara">
+      <label for="food1">Nusantara</label>
+    
+      <input type="checkbox" id="food2" name="food[]" value="Tradisional">
+      <label for="food2">Tradisional</label>
+    
+      <input type="checkbox" id="food3" name="food[]" value="Western">
+      <label for="food3">Western</label>
+    </div>
+    
+    <div class="form-group">
+      <label for="nama_pemilik">Nama Pemilik:</label>
+      <input type="text" id="nama_pemilik" name="nama_pemilik" required>
+    </div>
+    
+    <div class="form-group">
+      <input type="button" value="Daftar" onclick="submitForm()">
+      <input type="submit" value="Cancel">
+    </div>
+  </form>
+</body>
+</html>
